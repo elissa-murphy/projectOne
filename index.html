@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Order Tracker</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <h1>
+          Place your<br />
+          order below &#8595;
+        </h1>
+      </div>
+      <!-- Order Form -->
+      <div class="orderForm">
+        <h2>PLACE YOUR FOOD ORDER</h2>
+        <label for="Name">Enter your name:*</label>
+        <input id="name" type="text" placeholder="Name" />
+        <label for="Date">Enter the date:*</label>
+        <input id="date" type="date" placeholder="Date" />
+        <label for="Time">Enter the time:*</label>
+        <input id="time" type="time" placeholder="Time" />
+        <label for="Type">Select your type of food:*</label>
+        <select id="type" name="type" placeholder="Type">
+          <option disabled selected value>Select a type of food</option>
+          <option value="BreadSticks">BreadSticks</option>
+          <option value="Pasta">Pasta</option>
+          <option value="Pizza">Pizza</option>
+          <option value="Salad">Salad</option>
+        </select>
+        <label for="Notes">Additional Notes:</label>
+        <input id="notes" type="text" placeholder="Notes" />
+
+        <!-- Submit Order Btn  -->
+        <button id="submit" onclick="createOrder(); addCount();">Submit</button>
+
+        <!-- Delete Order Btn -->
+        <button onclick="removeOrder();">Delete Recent Order</button>
+      </div>
+      <br />
+
+      <!-- Display Order List  -->
+      <div id="results"></div>
+      <br />
+
+      <!-- Bar Chart with Order Count -->
+      <div id="bar">0 Orders</div>
+    </div>
+
+    <script src="lib/jquery-3.6.1.min.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>
