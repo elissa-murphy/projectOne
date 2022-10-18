@@ -19,7 +19,7 @@ class Order {
   placeOrder() {
     let results = document.getElementById("results");
     results.innerHTML +=
-      `<div class="indivOrder">` +
+      `<div class="indivOrder" id="indivOrder">` +
       `<h3> ORDER: </h3>` +
       `<div>Name: </div>` +
       this.name +
@@ -35,6 +35,7 @@ class Order {
       `</br>` +
       `<div>Notes:  </div>` +
       `<div class="notes"> ${this.notes} </div>` +
+      `<button onClick="removetheOrder()">DELETE ORDER</button>` +
       `</div>`;
 
     this.addHeight();
@@ -90,16 +91,21 @@ function addCount() {
   }
 }
 
-function removeOrder() {
-  let results = document.getElementById("results");
-  $("#results div:last").remove();
+// function removeOrder() {
+//   let results = document.getElementById("results");
+// }
+
+function removetheOrder() {
+  let indivOrder = document.getElementById("indivOrder");
+  indivOrder.outerHTML = "";
 }
 
 function go() {
   TweenMax.to(instructions, {
     duration: 0.5,
-    y: -2000,
+    y: 0,
     x: 0,
+    opacity: 0,
     delay: 0.1,
   });
 }

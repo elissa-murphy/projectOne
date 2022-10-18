@@ -10,8 +10,52 @@
   <body>
     <div id="app">
       <div id="instructions">
-        <h2>instructions</h2>
-        <button id="placeOrder" onclick="go()">Place</button>
+        <h2>welcome to my online pizzeria</h2>
+        <div class="browse">
+          <div class="browse_title">explore our menu</div>
+          <div class="browse_content">
+            <div class="indivPizza">
+              <div class="indivPizza_img-cheese"></div>
+              <div class="indivPizza_contet">
+                <h4>cheese</h4>
+              </div>
+            </div>
+
+            <div class="indivPizza">
+              <div class="indivPizza_img-pepperoni"></div>
+              <div class="indivPizza_contet">
+                <h4>pepperoni</h4>
+              </div>
+            </div>
+
+            <div class="indivPizza">
+              <div class="indivPizza_img-meat"></div>
+              <div class="indivPizza_contet">
+                <h4>meat lovers</h4>
+              </div>
+            </div>
+
+            <div class="indivPizza">
+              <div class="indivPizza_img-veggie"></div>
+              <div class="indivPizza_contet">
+                <h4>veggie</h4>
+              </div>
+            </div>
+
+            <div class="indivPizza">
+              <div class="indivPizza_img-bbq"></div>
+              <div class="indivPizza_contet">
+                <h4>bbq bacon chicken</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="place">
+          <div class="place_title">place an order</div>
+          <div class="place_content"></div>
+          <button id="placeOrder" onclick="go()">PLACE AN ORDER NOW!</button>
+        </div>
       </div>
       <div class="header">
         <h1>
@@ -41,10 +85,10 @@
         <input id="notes" type="text" placeholder="Notes" />
 
         <!-- Submit Order Btn  -->
-        <button id="submit" onclick="createOrder(); addCount();">Submit</button>
+        <button id="submit" onclick="createOrder(); addCount();">SUBMIT</button>
 
         <!-- Delete Order Btn -->
-        <button onclick="removeOrder();">Delete Recent Order</button>
+        <!-- <button onclick="removeOrder();">Delete Recent Order</button> -->
       </div>
       <br />
 
@@ -62,7 +106,7 @@
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="lib/jquery-3.6.1.min.js"></script>
+    <!-- <script src="lib/jquery-3.6.1.min.js"></script> -->
     <script src="app/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
   </body>
