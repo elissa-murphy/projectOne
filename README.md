@@ -2,7 +2,7 @@
 
 #### Option B - Online Order Tracker
 
-#### Link to GitHub Pages:
+#### Link to GitHub Pages: https://elissa-murphy.github.io/projectOne/
 
 ---
 
