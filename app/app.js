@@ -35,7 +35,7 @@ class Order {
       `</br>` +
       `<div>Notes:  </div>` +
       `<div class="notes"> ${this.notes} </div>` +
-      `<button onClick="removetheOrder()">DELETE ORDER</button>` +
+      `<button id="deleteOrder" onClick="removeOrder();">DELETE ORDER</button>` +
       `</div>`;
 
     this.addHeight();
@@ -91,25 +91,34 @@ function addCount() {
   }
 }
 
-// function removeOrder() {
-//   let results = document.getElementById("results");
-// }
-
-function removetheOrder() {
+function removeOrder() {
   let indivOrder = document.getElementById("indivOrder");
   indivOrder.outerHTML = "";
+
+  count--;
+  if (count == 1) {
+    document.getElementById("bar").innerHTML = count + " Cheese Pizza Order";
+  } else {
+    document.getElementById("bar").innerHTML = count + " Cheese Pizza Orders";
+    3;
+  }
+
+  removeHeight();
+}
+
+function removeHeight() {
+  let bar = document.getElementById("bar");
+  let height = bar.offsetHeight;
+  let newHeight = height - 20;
+  bar.style.height = "20px";
+  console.log("removed height");
 }
 
 function go() {
   TweenMax.to(instructions, {
     duration: 0.5,
-    y: 0,
+    y: -2000,
     x: 0,
-    opacity: 0,
     delay: 0.1,
   });
 }
-
-//NOTES
-//Need to determine styling/design
-//Need 'bar chart' for each type of food order. Only add to bar chart with corresponding type
