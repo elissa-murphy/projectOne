@@ -9,6 +9,10 @@
   </head>
   <body>
     <div id="app">
+      <div id="instructions">
+        <h2>instructions</h2>
+        <button id="placeOrder" onclick="go()">Place</button>
+      </div>
       <div class="header">
         <h1>
           Place your<br />
@@ -26,11 +30,12 @@
         <input id="time" type="time" placeholder="Time" />
         <label for="Type">Select your type of food:*</label>
         <select id="type" name="type" placeholder="Type">
-          <option disabled selected value>Select a type of food</option>
-          <option value="BreadSticks">BreadSticks</option>
-          <option value="Pasta">Pasta</option>
-          <option value="Pizza">Pizza</option>
-          <option value="Salad">Salad</option>
+          <option disabled selected value>Select your type of pizza:*</option>
+          <option value="Cheese Pizza">Cheese Pizza</option>
+          <option value="Pepperoni Pizza">Pepperoni Pizza</option>
+          <option value="Veggie Pizza">Veggie Pizza</option>
+          <option value="Meat Lovers Pizza">Meat Lovers Pizza</option>
+          <option value="BBQ Chicken Pizza">BBQ Chicken Pizza</option>
         </select>
         <label for="Notes">Additional Notes:</label>
         <input id="notes" type="text" placeholder="Notes" />
@@ -48,10 +53,17 @@
       <br />
 
       <!-- Bar Chart with Order Count -->
-      <div id="bar">0 Orders</div>
+      <div class="barCharts">
+        <div id="bar" class="cheese">0 Cheese Pizza Orders</div>
+        <div id="bar" class="pepperoni">0 Pepperoni Pizza Orders</div>
+        <div id="bar" class="veggie">0 Veggie Pizza Orders</div>
+        <div id="bar" class="meat">0 Meat Lovers Pizza Orders</div>
+        <div id="bar" class="bbq">0 BBQ Chicken Pizza Orders</div>
+      </div>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="lib/jquery-3.6.1.min.js"></script>
     <script src="app/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
   </body>
 </html>

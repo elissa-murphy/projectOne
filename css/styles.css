@@ -1,8 +1,21 @@
 #app {
+  max-width: 1800px;
   padding: 50px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background-color: #f8f8f8;
+}
+
+#instructions {
+  height: 1710px;
+  width: 1800px;
+  z-index: 20;
+  position: absolute;
+  margin: 0 auto;
+  /* padding: 50px; */
+  justify-content: center;
+  text-align: center;
+  background-color: #4f0000;
 }
 .header {
   height: 400px;
@@ -41,20 +54,48 @@ select {
   padding: 5px;
 }
 
-#bar {
+.barCharts {
   margin: auto;
-  margin-top: 50px;
-  max-width: 70px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+  height: 400px;
+  position: relative;
+  border: 1px solid black;
+  width: fit-content;
+  padding: 10px 64px;
+}
+
+#bar {
   height: 20px;
-  background-color: darkgrey;
+  color: #f8f8f8;
   padding: 10px;
   text-align: center;
+  margin: 16px;
+}
+
+.cheese {
+  background-color: #4f0000;
+}
+.pepperoni {
+  background-color: #740000 !important;
+}
+.veggie {
+  background-color: #980000 !important;
+}
+.meat {
+  background-color: #b50000 !important;
+}
+.bbq {
+  background-color: #d30000 !important;
 }
 
 #results {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin: 20px;
 }
 
 .indivOrder {
@@ -62,4 +103,24 @@ select {
   border: 1px solid darkgray;
   margin: 10px;
   padding: 25px;
+  max-width: 300px;
+  height: 350px;
+}
+
+.indivOrder div {
+  display: inline-block;
+  width: 43px;
+  /* background-color: blue; */
+  margin: 16px 16px 0px 0px;
+  font-weight: 700;
+}
+
+.indivOrder div.notes {
+  width: 200px;
+  font-weight: 400;
+}
+
+.indivOrder h3 {
+  border-bottom: 1px solid black;
+  padding-bottom: 16px;
 }

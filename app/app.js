@@ -1,3 +1,4 @@
+let instructions = document.getElementById("instructions");
 //Order Class
 class Order {
   name;
@@ -19,16 +20,21 @@ class Order {
     let results = document.getElementById("results");
     results.innerHTML +=
       `<div class="indivOrder">` +
-      `<h3> Order: </h3>` +
+      `<h3> ORDER: </h3>` +
+      `<div>Name: </div>` +
       this.name +
       `</br>` +
+      `<div>Date: </div>` +
       this.date +
       `</br>` +
+      `<div>Time: </div>` +
       this.time +
       `</br>` +
+      `<div>Food Order: </div>` +
       this.type +
       `</br>` +
-      this.notes +
+      `<div>Notes:  </div>` +
+      `<div class="notes"> ${this.notes} </div>` +
       `</div>`;
 
     this.addHeight();
@@ -77,9 +83,9 @@ var count = 0;
 function addCount() {
   count++;
   if (count == 1) {
-    document.getElementById("bar").innerHTML = count + " Order";
+    document.getElementById("bar").innerHTML = count + " Cheese Pizza Order";
   } else {
-    document.getElementById("bar").innerHTML = count + " Orders";
+    document.getElementById("bar").innerHTML = count + " Cheese Pizza Orders";
     3;
   }
 }
@@ -87,6 +93,15 @@ function addCount() {
 function removeOrder() {
   let results = document.getElementById("results");
   $("#results div:last").remove();
+}
+
+function go() {
+  TweenMax.to(instructions, {
+    duration: 0.5,
+    y: -2000,
+    x: 0,
+    delay: 0.1,
+  });
 }
 
 //NOTES
