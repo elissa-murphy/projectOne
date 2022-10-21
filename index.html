@@ -4,65 +4,120 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Order Tracker</title>
+    <title>Online Order Tracker | Elissa Murphy</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div id="app">
+      <!-- Main Instructions Screen -->
       <div id="instructions">
-        <h2>welcome to my online pizzeria</h2>
+        <div class="instructionsHeader"></div>
+        <div class="instructions_title">WELCOME TO MY ONLINE PIZZERIA!</div>
+
+        <!-- Instructions -->
+        <div class="appInstructions">
+          <div class="appInstructContent">
+            <strong>Instructions:<br /></strong> Click the button below to
+            navigate to the 'Place an Order' screen. Fill out the required form
+            inputs and submit your order. Once it's submitted, you can view your
+            order within the order list, delete your order, or see your order
+            represented in the bar graph at the bottom of the screen.
+          </div>
+        </div>
+
+        <!-- Go to Place an Order Screen -->
+        <div class="place">
+          <div class="place_title">Ready to place your order? Let's go!</div>
+          <div class="place_content"></div>
+          <button id="placeOrder" onclick="go()">PLACE AN ORDER!</button>
+        </div>
         <div class="browse">
-          <div class="browse_title">explore our menu</div>
+          <div class="browse_title">
+            Not quite ready to place an order? Explore our pizza menu!
+          </div>
+
+          <!-- Cheese Pizza -->
           <div class="browse_content">
             <div class="indivPizza">
               <div class="indivPizza_img-cheese"></div>
               <div class="indivPizza_contet">
-                <h4>cheese</h4>
+                <h4>CHEESE PIZZA</h4>
+                <p>
+                  Simple, yet simply delicious. Real cheese made from mozzarella
+                  on top of our signature pizza sauce with your choice of crust,
+                  then baked to a golden brown. It has just what you want, and
+                  nothing you don't.
+                </p>
               </div>
             </div>
 
+            <!-- Pepperoni Pizza -->
             <div class="indivPizza">
               <div class="indivPizza_img-pepperoni"></div>
               <div class="indivPizza_contet">
-                <h4>pepperoni</h4>
+                <h4>PEPPERONI PIZZA</h4>
+                <p>
+                  Your choice of crust covered with our signature pizza sauce,
+                  real cheese made from mozzarella, and pepperoni. With a
+                  pepperoni in almost every bite, it's one of our most popular
+                  pizzas.
+                </p>
               </div>
             </div>
 
+            <!-- Meat Lovers Pizza -->
             <div class="indivPizza">
               <div class="indivPizza_img-meat"></div>
               <div class="indivPizza_contet">
-                <h4>meat lovers</h4>
+                <h4>MEAT LOVERS PIZZA</h4>
+                <p>
+                  A masterpiece of hearty, high-quality meats including
+                  pepperoni, savory sausage, real beef, hickory-smoked bacon,
+                  and julienne-cut Canadian bacon, all topped with real cheese
+                  made from mozzarella.
+                </p>
               </div>
             </div>
 
+            <!-- Veggie Pizza -->
             <div class="indivPizza">
               <div class="indivPizza_img-veggie"></div>
               <div class="indivPizza_contet">
-                <h4>veggie</h4>
+                <h4>VEGGIE PIZZA</h4>
+                <p>
+                  All your favorite veggies together on a delightfully delicious
+                  pizza. Loaded with crisp green peppers, fresh-cut onions,
+                  mushrooms, ripe black olives, vine-ripened Roma tomatoes, and
+                  real cheese made from mozzarella.
+                </p>
               </div>
             </div>
 
+            <!-- BBQ Chicken -->
             <div class="indivPizza">
               <div class="indivPizza_img-bbq"></div>
               <div class="indivPizza_contet">
-                <h4>bbq bacon chicken</h4>
+                <h4>BBQ CHICKEN PIZZA</h4>
+                <p>
+                  Smoky Southern-style BBQ sauce adds a tangy twist to this
+                  irresistible pizza topped with grilled chicken, hickory-smoked
+                  bacon, fresh-cut onions, and real cheese made from mozzarella.
+                  Round one up today. ORDER NOW
+                </p>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="place">
-          <div class="place_title">place an order</div>
-          <div class="place_content"></div>
-          <button id="placeOrder" onclick="go()">PLACE AN ORDER NOW!</button>
-        </div>
       </div>
+
+      <!-- Place an Order Screen -- All Code Below -->
       <div class="header">
         <h1>
           Place your<br />
           order below &#8595;
         </h1>
       </div>
+
       <!-- Order Form -->
       <div class="orderForm">
         <h2>PLACE YOUR FOOD ORDER</h2>
@@ -84,25 +139,54 @@
         <label for="Notes">Additional Notes:</label>
         <input id="notes" type="text" placeholder="Notes" />
 
-        <button id="submit" onclick="createOrder(); addCount();">SUBMIT</button>
+        <button id="submit" onclick="createOrder();">SUBMIT</button>
       </div>
       <br />
 
       <!-- Display Order List  -->
+      <h2>LIST OF ORDERS</h2>
       <div id="results"></div>
       <br />
 
       <!-- Bar Chart with Order Count -->
+      <h2>TRACK THE AMOUNT OF ORDERS</h2>
       <div class="barCharts">
-        <div id="bar" class="cheese">0 Cheese Pizza Orders</div>
-        <div id="bar" class="pepperoni">0 Pepperoni Pizza Orders</div>
-        <div id="bar" class="veggie">0 Veggie Pizza Orders</div>
-        <div id="bar" class="meat">0 Meat Lovers Pizza Orders</div>
-        <div id="bar" class="bbq">0 BBQ Chicken Pizza Orders</div>
+        <div>
+          <p class="barAmount">10 orders</p>
+          <p class="barAmount">9 orders</p>
+          <p class="barAmount">8 orders</p>
+          <p class="barAmount">7 orders</p>
+          <p class="barAmount">6 orders</p>
+          <p class="barAmount">5 orders</p>
+          <p class="barAmount">4 orders</p>
+          <p class="barAmount">3 orders</p>
+          <p class="barAmount">2 orders</p>
+          <p class="barAmount" id="bottomBarAmount">1 order</p>
+        </div>
+        <!-- Cheese Bar -->
+        <div class="type">
+          <div id="bar" class="cheese">Cheese Pizza</div>
+        </div>
+        <!-- Pepperoni Bar -->
+        <div class="type">
+          <div id="bar2" class="pepperoni">Pepperoni Pizza</div>
+        </div>
+        <!-- Veggie Bar -->
+        <div class="type">
+          <div id="bar3" class="veggie">Veggie Pizza</div>
+        </div>
+        <!-- Meat Lovers Bar -->
+        <div class="type">
+          <div id="bar4" class="meat">Meat Lovers Pizza</div>
+        </div>
+        <!-- BBQ Chicken Bar -->
+        <div class="type">
+          <div id="bar5" class="bbq">BBQ Chicken Pizza</div>
+        </div>
       </div>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="lib/jquery-3.6.1.min.js"></script>
     <script src="app/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
   </body>

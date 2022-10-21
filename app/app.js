@@ -1,4 +1,5 @@
 let instructions = document.getElementById("instructions");
+
 //Order Class
 class Order {
   name;
@@ -8,6 +9,7 @@ class Order {
   notes;
 
   constructor(name, type) {
+    //Retrieve input values
     this.name = document.getElementById("name").value;
     this.date = document.getElementById("date").value;
     this.time = document.getElementById("time").value;
@@ -17,6 +19,7 @@ class Order {
 
   //Place a new order
   placeOrder() {
+    //Displaying the order
     let results = document.getElementById("results");
     results.innerHTML +=
       `<div class="indivOrder" id="indivOrder">` +
@@ -35,22 +38,48 @@ class Order {
       `</br>` +
       `<div>Notes:  </div>` +
       `<div class="notes"> ${this.notes} </div>` +
-      `<button id="deleteOrder" onClick="removeOrder();">DELETE ORDER</button>` +
+      `<button id="deleteOrder" onClick="removeOrder();">DELETE ORDER FROM LIST</button>` +
       `</div>`;
 
+    //Invoking Add Height function
     this.addHeight();
   }
 
+  //Add height to bar chart
   addHeight() {
-    // Adding Height to Bar Graph
-    let bar = document.getElementById("bar");
-    let height = bar.offsetHeight;
-    let newHeight = height + 20;
-    bar.style.height = newHeight + "px";
+    if (this.type == "Cheese Pizza") {
+      // Adding Height to Bar Graph
+      let bar = document.getElementById("bar");
+      let height = bar.offsetHeight;
+      let newHeight = height + 20;
+      bar.style.height = newHeight + "px";
+    } else if (this.type == "Pepperoni Pizza") {
+      let bar2 = document.getElementById("bar2");
+      let height = bar2.offsetHeight;
+      let newHeight = height + 20;
+      bar2.style.height = newHeight + "px";
+    } else if (this.type == "Veggie Pizza") {
+      let bar3 = document.getElementById("bar3");
+      let height = bar3.offsetHeight;
+      let newHeight = height + 20;
+      bar3.style.height = newHeight + "px";
+    } else if (this.type == "Meat Lovers Pizza") {
+      let bar4 = document.getElementById("bar4");
+      let height = bar4.offsetHeight;
+      let newHeight = height + 20;
+      bar4.style.height = newHeight + "px";
+    } else if (this.type == "BBQ Chicken Pizza") {
+      let bar5 = document.getElementById("bar5");
+      let height = bar5.offsetHeight;
+      let newHeight = height + 20;
+      bar5.style.height = newHeight + "px";
+    } else {
+      return;
+    }
   }
 }
 
-//Display the Order in List and in Bar Graph
+//Add the Order
 class DisplayOrder extends Order {
   constructor() {
     super();
@@ -75,49 +104,22 @@ function createOrder() {
   } else if (document.getElementById("type").value == "") {
     alert("Please select the type of food");
   } else {
+    //Create order if all form alerts are filled out
     let newOrder = new DisplayOrder().placeOrder();
   }
 }
 
-//Increase order count in bar graph
-var count = 0;
-function addCount() {
-  count++;
-  if (count == 1) {
-    document.getElementById("bar").innerHTML = count + " Cheese Pizza Order";
-  } else {
-    document.getElementById("bar").innerHTML = count + " Cheese Pizza Orders";
-    3;
-  }
-}
-
+//Remove order from list if user clicks button
 function removeOrder() {
   let indivOrder = document.getElementById("indivOrder");
   indivOrder.outerHTML = "";
-
-  count--;
-  if (count == 1) {
-    document.getElementById("bar").innerHTML = count + " Cheese Pizza Order";
-  } else {
-    document.getElementById("bar").innerHTML = count + " Cheese Pizza Orders";
-    3;
-  }
-
-  removeHeight();
 }
 
-function removeHeight() {
-  let bar = document.getElementById("bar");
-  let height = bar.offsetHeight;
-  let newHeight = height - 20;
-  bar.style.height = "20px";
-  console.log("removed height");
-}
-
+// Menu screen animation
 function go() {
   TweenMax.to(instructions, {
     duration: 0.5,
-    y: -2000,
+    y: -3000,
     x: 0,
     delay: 0.1,
   });
